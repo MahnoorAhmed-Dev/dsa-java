@@ -30,11 +30,22 @@ public class ArrayUtils {
   }
 
   public static int findMin(int[] arr) {
+    if (arr.length == 0) {
+      throw new IllegalArgumentException("Cannot find min of an empty array");
+    }
     
-    // TODO
+    int min = arr[0];
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] < min) {
+        min = arr[i];
+      }
+    }
+    return min;
   }
+  
 
   public static boolean hasDuplicates(int[] arr) {
+    
     // TODO
   }
 
@@ -44,5 +55,6 @@ public class ArrayUtils {
     System.out.println(java.util.Arrays.toString(arr));
 
     System.out.println(findMax(arr));
+    System.out.println(findMin(arr));
   }
 }
