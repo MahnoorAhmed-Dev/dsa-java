@@ -15,10 +15,22 @@ public class ArrayUtils {
   }
 
   public static int findMax(int[] arr) {
-    // TODO
+
+    if (arr.length == 0) {
+      throw new IllegalArgumentException("Cannot find max of an empty array");
+    }
+
+    int max = arr[0];
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+    }
+    return max;
   }
 
   public static int findMin(int[] arr) {
+    
     // TODO
   }
 
@@ -29,7 +41,8 @@ public class ArrayUtils {
   public static void main(String[] args) {
     int[] arr = { 1, 2, 3, 4, 5 };
     reverseInPlace(arr);
-
     System.out.println(java.util.Arrays.toString(arr));
+
+    System.out.println(findMax(arr));
   }
 }
